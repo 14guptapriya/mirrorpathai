@@ -12,7 +12,7 @@ from app.models.alumnis_update import AlumniUpdate
 from app.models.students_profile import StudentProfile
 from app.models.student_identity_profile import StudentIdentityProfile
 from app.models.alumni_identity_profile import AlumniIdentityProfile
-
+from app.models.student_goal import StudentGoal
 from app.routers.auth import router as auth_router
 
 # Create database tables
@@ -54,13 +54,15 @@ from app.routers import (
     student_profile,
     alumni_profile,
     alumni_journey,
-    alumni_update
+    alumni_update,
+    goals
 )
 
 app.include_router(student_profile.router)
 app.include_router(alumni_profile.router)
 app.include_router(alumni_journey.router)
 app.include_router(alumni_update.router)
+app.include_router(goals.router)
 
 from app.routers import  identity
 app.include_router(identity.router)
