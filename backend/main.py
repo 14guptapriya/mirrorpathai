@@ -54,7 +54,8 @@ from app.routers import (
     student_profile,
     alumni_profile,
     alumni_journey,
-    alumni_update
+    alumni_update,
+    goals
 )
 
 app.include_router(student_profile.router)
