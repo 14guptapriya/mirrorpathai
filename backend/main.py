@@ -62,6 +62,7 @@ app.include_router(student_profile.router)
 app.include_router(alumni_profile.router)
 app.include_router(alumni_journey.router)
 app.include_router(alumni_update.router)
+app.include_router(goals.router)
 
 from app.routers import  identity
 app.include_router(identity.router)
