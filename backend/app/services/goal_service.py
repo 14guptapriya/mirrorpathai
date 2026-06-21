@@ -1,4 +1,4 @@
-from app.models.student_goal import StudentGoal
+from app.models.student_goals import StudentGoal
 
 
 def create_goal(
