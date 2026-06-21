@@ -12,7 +12,7 @@ from app.models.alumnis_update import AlumniUpdate
 from app.models.students_profile import StudentProfile
 from app.models.student_identity_profile import StudentIdentityProfile
 from app.models.alumni_identity_profile import AlumniIdentityProfile
-from app.models.student_goal import StudentGoal
+from app.models.student_goals import StudentGoal
 from app.routers.auth import router as auth_router
 
 # Create database tables
