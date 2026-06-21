@@ -31,7 +31,8 @@ app.add_middleware(
         "http://localhost:3000",
         "http://localhost:5173",
         "http://localhost:5174",
-        "http://localhost:8000"
+        "http://localhost:8000",
+        "https://mirrorpath-ai.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
