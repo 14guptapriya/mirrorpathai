@@ -1,10 +1,10 @@
-# MirrorPathAI 🚀
+# MirrorPathAI 
 
 ### AI-Powered Identity-Based Alumni Mentorship Platform
 
 > **"Learn from people who were once exactly where you are today."**
 
-🌐 **Live Demo:** https://mirrorpath-ai.vercel.app
+**Live Demo:** https://mirrorpath-ai.vercel.app
 
 ---
 
@@ -33,10 +33,10 @@ Meanwhile, valuable alumni knowledge and experiences are often lost after gradua
 
 MirrorPathAI transforms alumni experiences into personalized mentorship opportunities through:
 
-- 🧠 AI Identity Profiling
-- 🤝 Intelligent Alumni Matching
-- 🎯 Personalized Goal Recommendations
-- 📈 Goal Tracking & Growth Planning
+- AI Identity Profiling
+- Intelligent Alumni Matching
+- Personalized Goal Recommendations
+- Goal Tracking & Growth Planning
 
 ---
 
@@ -66,18 +66,18 @@ Growth Tracking
 
 ### AI Layer
 - Groq (Llama 3.3)
-- Embeddings
-- ChromaDB
+- Embeddings (mistral-embed)
+- Pinecone Vector DB
 - RAG
 
 ---
 
 ## Future Roadmap
 
-- 🤝 Alumni Connection Network
-- 🧠 AI Growth Companion
-- 🤖 Agentic Intelligence
-- 🌍 National Wisdom Network
+- Alumni Connection Network
+- AI Growth Companion
+- Agentic Intelligence
+- National Wisdom Network
 
 ---
 
