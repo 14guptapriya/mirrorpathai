@@ -11,6 +11,7 @@ import StudentOnboarding from '../pages/StudentOnboarding';
 import IdentityGeneration from '../pages/IdentityGeneration';
 import StudentDashboard from '../pages/StudentDashboard';
 import StudentMatching from '../pages/StudentMatching';
+import GoalSetting from '../pages/GoalSetting';
 import AlumniProfile from '../pages/AlumniProfile';
 import AlumniJourney from '../pages/AlumniJourney';
 import AlumniDashboard from '../pages/AlumniDashboard';
@@ -82,6 +83,18 @@ const AppRoutes = () => {
             <RoleGuard allowedRole="student">
               <OnboardingGuard requiredStep="dashboard">
                 <StudentMatching />
+              </OnboardingGuard>
+            </RoleGuard>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/student/goals"
+        element={
+          <ProtectedRoute>
+            <RoleGuard allowedRole="student">
+              <OnboardingGuard requiredStep="dashboard">
+                <GoalSetting />
               </OnboardingGuard>
             </RoleGuard>
           </ProtectedRoute>

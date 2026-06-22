@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { studentService } from '../services/apiServices';
 import { useAuth } from '../context/AuthContext';
 import { 
@@ -9,6 +10,7 @@ import {
   MapPin, 
   ArrowRight,
   TrendingUp,
+  Target,
   Brain,
   X,
   Send,
@@ -33,6 +35,7 @@ const ALUMNI_CATALOG = {
 
 const StudentMatching = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   
   const [matchingState, setMatchingState] = useState('idle'); // idle, loading_1, loading_2, loading_3, results
   const [matches, setMatches] = useState([]);
@@ -255,23 +258,34 @@ const StudentMatching = () => {
                         </p>
                       </div>
 
-                      {/* Connect & View Buttons */}
-                      <div className="flex space-x-2 pt-3 border-t border-slate-50">
+                      {/* Connect, View & Goals Buttons */}
+                      <div className="flex flex-col space-y-2 pt-3 border-t border-slate-50">
+                        <div className="flex space-x-2">
+                          <Button 
+                            variant="secondary" 
+                            size="sm" 
+                            className="flex-1" 
+                            onClick={() => openDetailsModal(match)}
+                          >
+                            View Details
+                          </Button>
+                          <Button 
+                            variant="primary" 
+                            size="sm"
+                            loading={connectingId === match.user_id}
+                            onClick={() => handleConnect(match.user_id, match.name)}
+                          >
+                            Connect
+                          </Button>
+                        </div>
                         <Button 
-                          variant="secondary" 
+                          variant="ghost" 
                           size="sm" 
-                          className="flex-1" 
-                          onClick={() => openDetailsModal(match)}
+                          icon={Target}
+                          className="w-full"
+                          onClick={() => navigate('/student/goals', { state: { alumniId: match.user_id } })}
                         >
-                          View Details
-                        </Button>
-                        <Button 
-                          variant="primary" 
-                          size="sm"
-                          loading={connectingId === match.user_id}
-                          onClick={() => handleConnect(match.user_id, match.name)}
-                        >
-                          Connect
+                          Set Goals
                         </Button>
                       </div>
 
