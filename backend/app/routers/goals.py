@@ -40,3 +40,9 @@ def add_goal(
         goal
 
     )
+@router.get("/")
+def get_goals():
+    pass
+@router.delete("/{goal_id}")
+def delete_goal(goal_id: int):
+    pass
