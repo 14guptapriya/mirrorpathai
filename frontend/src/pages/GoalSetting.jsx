@@ -8,7 +8,7 @@ import Badge from '../components/Badge';
 import Input from '../components/Input';
 import { goalService } from '../services/goalService';
 
-// Cycling status messages for the AI loading experience
+
 const STATUS_MESSAGES = [
   'Analyzing your profile...',
   'Understanding your matched mentor...',
