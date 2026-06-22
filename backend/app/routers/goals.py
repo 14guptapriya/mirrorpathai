@@ -9,6 +9,8 @@ from app.db.session import get_db
 from app.schemas.goal import GoalCreate
 
 from app.services.goal_service import create_goal
+from app.ai.goal_recommender import generate_goal_recommendations, client
+from app.services.goal_recommender_service import get_recommendations
 
 
 router = APIRouter(
@@ -46,3 +48,14 @@ def get_goals():
 @router.delete("/{goal_id}")
 def delete_goal(goal_id: int):
     pass
+@router.get("/recommend")
+def recommend_goals(
+    alumni_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    return get_recommendations(
+        db,
+        current_user.id,
+        alumni_id
+    )
