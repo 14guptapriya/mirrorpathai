@@ -11,50 +11,61 @@ import ProgressBar from '../components/ProgressBar';
 const QUESTIONS = [
   {
     number: 1,
-    type: 'choice',
-    question: 'What is your primary career field of interest?',
-    placeholder: 'Select a field',
-    options: [
-      { value: 'Software Engineering', label: 'Software Engineering', desc: 'Frontend, backend, fullstack, or systems engineering' },
-      { value: 'Product Management', label: 'Product Management', desc: 'Strategy, design, specs, and launching products' },
-      { value: 'Data Science & AI', label: 'Data Science & AI', desc: 'Machine learning, analytics, and data modeling' },
-      { value: 'UI/UX Design', label: 'UI/UX Design', desc: 'User research, wireframing, and visual interfaces' },
-      { value: 'Consulting / Strategy', label: 'Consulting / Strategy', desc: 'Business analysis, solving corporate problems' }
-    ]
+    question: "Tell us about yourself.",
+    placeholder:
+      "Share your interests, activities, projects, clubs, hobbies, achievements, and the career paths you are currently exploring.",
+    helper:
+      "Think of this as your story. Help us understand who you are beyond academics."
   },
   {
     number: 2,
-    type: 'long_text',
-    question: 'Why did you choose this field, and what motivates you to pursue it?',
-    placeholder: 'Share your spark. Did a project, class, or internship inspire you? What gets you excited about this domain?',
-    helper: 'Write 2-3 sentences. This helps the semantic engine understand your core motivation.'
+    question: "What genuinely excites you?",
+    placeholder:
+      "What topics, technologies, industries, ideas, or experiences make you feel energized and curious?",
+    helper:
+      "Tell us what naturally captures your attention and keeps you motivated to learn more."
   },
   {
     number: 3,
-    type: 'long_text',
-    question: 'What has been the biggest challenge or struggle you have faced in your academic or career journey so far?',
-    placeholder: 'Describe a hurdle: imposter syndrome, career pivot doubts, placement rejections, or academic struggles...',
-    helper: 'Be honest and narrative. We match students with alumni who faced and overcame similar challenges.'
+    question: "What kind of problems would you love to solve?",
+    placeholder:
+      "Think about challenges in technology, healthcare, education, business, society, or everyday life that you find meaningful.",
+    helper:
+      "There are no right answers. We want to understand what matters most to you."
   },
   {
     number: 4,
-    type: 'choice',
-    question: 'How do you prefer to learn and collaborate with a mentor?',
-    options: [
-      { value: 'Structured checkpoints', label: 'Structured Tasks', desc: 'Reviewing milestones, project reviews, and goals' },
-      { value: 'Open conversation', label: 'Casual Chats', desc: 'Fireside discussions, advice on industry trends, Q&A' },
-      { value: 'Hands-on prep', label: 'Hands-on Prep', desc: 'Mock interviews, resume editing, and technical tests' }
-    ]
+    question: "What kind of impact would make you proud of your career?",
+    placeholder:
+      "Describe the difference you would like your work to make for people, organizations, or communities.",
+    helper:
+      "Imagine looking back at your career years from now. What achievements would make you feel fulfilled?"
   },
   {
     number: 5,
-    type: 'long_text',
-    question: 'What are your main expectations and goals for this mentorship program?',
-    placeholder: 'What does a successful match look like? e.g. getting an internship, building confidence, networking...',
-    helper: 'Write a brief description of what you hope to achieve.'
+    question: "What have you explored so far?",
+    placeholder:
+      "Mention projects, internships, hackathons, leadership roles, certifications, courses, research, or personal initiatives.",
+    helper:
+      "Share experiences that helped shape your interests, skills, and career direction."
+  },
+  {
+    number: 6,
+    question: "What are you currently struggling with?",
+    placeholder:
+      "Career clarity, placements, confidence, technical skills, networking, internships, higher studies, or something else.",
+    helper:
+      "Being honest helps us connect you with alumni who have overcome similar challenges."
+  },
+  {
+    number: 7,
+    question: "Imagine yourself 5 years from now. What kind of work would you love to be doing?",
+    placeholder:
+      "Describe your ideal role, industry, company, work environment, and the problems you would like to work on.",
+    helper:
+      "Focus on your aspirations rather than what seems realistic today."
   }
 ];
-
 const StudentOnboarding = () => {
   const { setOnboardingSubmitted, refreshOnboardingStatus } = useAuth();
   const navigate = useNavigate();

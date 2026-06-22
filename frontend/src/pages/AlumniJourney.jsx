@@ -166,15 +166,16 @@ const AlumniJourney = () => {
     setLoading(true);
     try {
       // Structure fields in backend expected casing
-      const payload = {
-        studentIdentity: journeyData.studentIdentity,
-        motivations: journeyData.motivations,
-        challenges: journeyData.challenges,
-        keyExperiences: journeyData.keyExperiences,
-        turningPoint: journeyData.turningPoint,
-        adviceToYoungerSelf: journeyData.adviceToYoungerSelf,
-        careerReflection: journeyData.careerReflection
-      };
+      
+const payload = {
+  student_identity: journeyData.studentIdentity,
+  motivations: journeyData.motivations,
+  challenges: journeyData.challenges,
+  key_experiences: journeyData.keyExperiences,
+  turning_point: journeyData.turningPoint,
+  advice_to_younger_self: journeyData.adviceToYoungerSelf,
+  career_reflection: journeyData.careerReflection,
+};
       
       await alumniService.saveJourney(payload);
       await refreshOnboardingStatus();

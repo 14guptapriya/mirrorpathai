@@ -84,12 +84,11 @@ def build_alumni_identity(profile, journey, updates=None):
     Alumni Journey:
     """
 
-    for field, value in journey.__dict__.items():
-
-        if field.startswith("_"):
-            continue
-
-        context += f"\n{field}: {value}"
+    if journey:
+        for field, value in journey.__dict__.items():
+            if field.startswith("_"):
+                continue
+            context += f"\n{field}: {value}"
 
     if updates:
 

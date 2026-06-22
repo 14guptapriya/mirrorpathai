@@ -9,7 +9,7 @@ def create_alumni_profile(db, user_id, profile):
     if existing_profile:
         raise Exception("Alumni profile already exists")
 
-    db_profile = AlumniProfile(**profile.model_dump())
+    db_profile = AlumniProfile(user_id=user_id, **profile.model_dump())
 
     db.add(db_profile)
     db.commit()

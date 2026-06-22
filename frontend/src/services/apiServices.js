@@ -72,19 +72,9 @@ export const studentService = {
 
 export const alumniService = {
   saveProfile: async (profileData) => {
-    const response = await api.post('/alumni/profile/', {
-      college_name: profileData.collegeName,
-      degree: profileData.degree,
-      department: profileData.department,
-      graduation_year: parseInt(profileData.graduationYear, 10),
-      current_designation: profileData.currentDesignation,
-      current_company: profileData.currentCompany,
-      industry: profileData.industry,
-      years_of_experience: parseInt(profileData.yearsOfExperience, 10),
-      linkedin_url: profileData.linkedinUrl || null
-    });
-    return response.data;
-  },
+  const response = await api.post('/alumni/profile/', profileData);
+  return response.data;
+},
 
   fetchProfile: async () => {
     const response = await api.get('/alumni/profile/me');
@@ -92,17 +82,10 @@ export const alumniService = {
   },
 
   saveJourney: async (journeyData) => {
-    const response = await api.post('/alumni/journey/', {
-      student_identity: journeyData.studentIdentity || '',
-      motivations: journeyData.motivations || '',
-      challenges: journeyData.challenges || '',
-      key_experiences: journeyData.keyExperiences || '',
-      turning_point: journeyData.turningPoint || '',
-      advice_to_younger_self: journeyData.adviceToYoungerSelf || '',
-      career_reflection: journeyData.careerReflection || ''
-    });
-    return response.data;
-  },
+   
+  const response = await api.post('/alumni/journey/', journeyData);
+  return response.data;
+},
 
   fetchJourney: async () => {
     const response = await api.get('/alumni/journey/me');

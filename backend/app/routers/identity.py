@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.auth.dependencies import get_current_user
 from app.models.user import User
@@ -63,6 +63,18 @@ def create_alumni_identity(
     profile = get_alumni_profile(db, current_user.id)
     journey = get_journey(db, current_user.id)
     updates = get_updates(db, current_user.id)
+
+    if profile is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Alumni profile not found. Please complete your profile first."
+        )
+
+    if journey is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Alumni journey not found. Please complete your journey details first."
+        )
 
     identity = create_alumni_identity_profile(
         db=db,

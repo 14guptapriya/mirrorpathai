@@ -169,9 +169,19 @@ const AlumniProfile = () => {
     try {
       // Merge current role data for profile creation endpoint
       const payload = {
-        ...academicData,
-        ...currentRoleData
-      };
+  college_name: academicData.collegeName,
+  degree: academicData.degree,
+  department: academicData.department,
+  graduation_year: Number(academicData.graduationYear),
+
+  current_designation: currentRoleData.designation,
+  current_company: currentRoleData.company,
+  industry: currentRoleData.industry,
+  years_of_experience: Number(currentRoleData.yearsOfExperience),
+
+  linkedin_url: currentRoleData.linkedinUrl || null,
+};
+
       
       const response = await alumniService.saveProfile(payload);
       
